@@ -46,7 +46,7 @@ namespace Assets.GameTracking
 							Id = trackedObject.Id,
 							Type = trackedObject.Type.ToString(),
 							Position = new SK.ClientLibrary.Model.Vector3(pos.x, pos.y, pos.z),
-							MetadataJson = trackedObject.GetMetadata()
+							Metadata = trackedObject.GetMetadata()
 						});
 					}
 					var resp = restClient.PostSnapshot(snapshot);
