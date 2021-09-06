@@ -64,6 +64,16 @@ public class Damageable : MonoBehaviour
 		ReceiveAnAttack(_currentHealthSO.CurrentHealth);
 	}
 
+	public int GetHealth()
+	{
+		return _currentHealthSO.CurrentHealth;
+	}
+
+	public int GetMaxHealth()
+	{
+		return _currentHealthSO.MaxHealth;
+	}
+
 	public void ReceiveAnAttack(int damage)
 	{
 		if (IsDead)

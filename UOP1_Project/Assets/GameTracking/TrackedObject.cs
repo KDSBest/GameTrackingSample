@@ -14,8 +14,18 @@ namespace Assets.GameTracking
 
 		public Guid Id = Guid.NewGuid();
 
+		private Damageable health;
+
+		public void Awake()
+		{
+			health = GetComponent<Damageable>();
+		}
+
 		public string GetMetadata()
 		{
+			if (health != null)
+				return $"{{ \"health\": {health.GetHealth()}, \"maxHealth\": {health.GetMaxHealth()} }}";
+
 			return "{}";
 		}
 	}
